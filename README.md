@@ -1,10 +1,15 @@
-# real_time_notification
+#RTN
+
+Real Time Notification
+
 Django App Real time Notification
 
 Real Time Notification P2P tool
 
 Real Time Notification is a peer to peer push publish subscribe notification system which will disseminate the information about moving hubs to peer delivery manpower/systems. This project adds integration tool for Django based web platforms, thus enabling you to easily push real-time notifications to your existing web applications.
+
 In addition, it provides utilities to:
+
 1.	Generate publish subscribe (pub/sub) driven message flow.
 2.	Can send single or multiple Real time notifications.
 Installation Environments and Dependencies
@@ -15,19 +20,31 @@ Installation Environments and Dependencies
 5.	virtualenv
 6.	node modules
 7.	front end package managers[npm/bower]
+
+
 Run the Server(s) [Assuming Unix environment]
+
 1.	NodeJS : node node_modules/ishout.js/server.js
 2.	Redis: redis-server
 3.	Django-Admin
 
 Workflow
+
+
 The problem statement in question aims to build real time notification, I have developed build using publish subscribe (pub/sub) view model.  When your web app calls push server, it does so over an internal HTTP API. On the client side, your client is also connected to the nodejs server, socket.io. and redis. So when you, inside your app, send a request (let say, send a message "Hello Alok!" to user A) the django server publish API which takes that request and finds the appropriate socket(s) for a client called "A", and emits that message. Hence that is the basic workflow.
 
 Configuration
+
 For product build over local development server, We don’t need any settings configurations, default settings work for local environment. For production quality build over production server configuring announce is done by providing a JSON configuration file as a command line argument. 
+
 To specify the path to this file, use the --config command line option, like so:
 $ node server.js --config=/path/to/settings.json
+
+
+
 Authorization
+
+
 The real time notification authorization model works like this:
 1.	Client makes a request to the iOS/Android PhoneApp/webapp.
 2.	In turn webapp turns to push server internal API and requests a token for that user's ID.
