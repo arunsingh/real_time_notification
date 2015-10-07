@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>Login Form</title>
+</head>
+<body>
+<p> <form action= '?next={{ next|default:"/"}}' method ="post">
+
+{%csrf_token%}
+
+Username: <input id="id_username" type="text" name="username" /><p>
+Password: <input id="id_password" type="password" name="password" /><br>
+
+<input type="submit" value ="Submit" /></form>
+</body>
+</html>

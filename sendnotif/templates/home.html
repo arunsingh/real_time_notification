@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notifications Dashboard</title>
+
+	{% load drealtimetags %}
+	{% ishout_js %}
+
+
+	<script type="text/javascript">
+	
+// use .on() to add a listener. you can add as many listeners as you want. where alertchannel is channel name, Here ishout should be pushing to the subscribe channel
+ishout.on('alertchannel', function(data){
+    alert(data.msg);
+});
+
+// .init() will authenticate against the ishout.js server, and open the WebSocket connection.
+ishout.init();
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+
+<h1>Dashboard</h1>
+
+{%for user in users%}
+
+{{user.first_name}}<a href="/alert/?user={{user.id}}"> Alert (Hello VaibhavK)</a></br>
+
+{%empty%}
+
+<b> No users found</b>
+
+{%endfor%}
+
+</body>
+</html>
+
+
