@@ -12,7 +12,7 @@ var settings = {
   storage : 'redis',
   redisHost : 'localhost',
   redisPort : 6379,
-  redisPassword : 'bhawna#2312',
+  redisPassword : 'nullify',
   apiHost : 'localhost',
   apiPort : 6600, 
   socketHost :'0.0.0.0',
