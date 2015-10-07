@@ -12,7 +12,12 @@ In addition, it provides utilities to:
 
 1.	Generate publish subscribe (pub/sub) driven message flow.
 2.	Can send single or multiple Real time notifications.
+
+
+
 Installation Environments and Dependencies
+
+
 1.	Node.js
 2.	Redis
 3.	npm
@@ -46,6 +51,7 @@ Authorization
 
 
 The real time notification authorization model works like this:
+
 1.	Client makes a request to the iOS/Android PhoneApp/webapp.
 2.	In turn webapp turns to push server internal API and requests a token for that user's ID.
 3.	Once token is recieved, the webapp sets a cookie called emit Token to the value of the token, and renders the requested page back to client.
